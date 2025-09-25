@@ -21,4 +21,18 @@ foreach ($pilih_index as $idx) {
     $beli[] = $nama_barang[$idx];
     $jumlah[] = rand(1, 5); 
 }
+
+echo "<table border='1' cellpadding='5' cellspacing='0'>";
+echo "<tr><th>Nama Barang</th><th>Harga</th><th>Jumlah</th><th>Total</th></tr>";
+
+foreach ($beli as $i => $barang) {
+    $sub_total = $harga_barang[array_search($barang, $nama_barang)] * $jumlah[$i];
+    echo "<tr>
+            <td>{$barang}</td>
+            <td>Rp " . number_format($harga_barang[array_search($barang, $nama_barang)], 0, ',', '.') . "</td>
+            <td>{$jumlah[$i]}</td>
+            <td>Rp " . number_format($sub_total, 0, ',', '.') . "</td>
+          </tr>";
+    $grandtotal += $sub_total;
+}
 ?>
