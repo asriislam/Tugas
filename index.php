@@ -35,4 +35,8 @@ foreach ($beli as $i => $barang) {
           </tr>";
     $grandtotal += $sub_total;
 }
+
+echo "<tr><td colspan='3'><b>Total Belanja</b></td>
+      <td><b>Rp " . number_format($grandtotal, 0, ',', '.') . "</b></td></tr>";
+echo "</table>";
 ?>
